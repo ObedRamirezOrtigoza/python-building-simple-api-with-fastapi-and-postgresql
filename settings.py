@@ -1,12 +1,9 @@
-# settings.py
 
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    sqlalchemy_database_url: str  # Match the environment variable name
+    SQLALCHEMY_DATABASE_URL: str =  "postgresql://oro:password@localhost:5432/nasdaq_stocks"
 
-    class Config:
-        env_file = ".env"
-        env_file_encoding = 'utf-8'
-
+    #sqlalchemy_string: str = "postgresql://user:passwordp@host/db"
+    
 settings = Settings()
